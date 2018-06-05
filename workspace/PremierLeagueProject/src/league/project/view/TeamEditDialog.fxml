@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="283.0" maxWidth="340.0" minHeight="283.0" minWidth="340.0" prefHeight="283.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="league.project.controller.TeamEditDialogController">
+   <children>
+      <GridPane layoutX="6.0" layoutY="10.0" prefHeight="215.0" prefWidth="306.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="94.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="212.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="28.0" prefWidth="140.0" text="Budget (£):" GridPane.rowIndex="4" />
+            <Label prefHeight="28.0" prefWidth="145.0" text="Name:" />
+            <Label prefHeight="28.0" prefWidth="142.0" text="Short Name:" GridPane.rowIndex="1" />
+            <Label prefHeight="28.0" prefWidth="144.0" text="Coach:" GridPane.rowIndex="2" />
+            <Label prefHeight="28.0" prefWidth="147.0" text="Ground:" GridPane.rowIndex="3" />
+            <Label prefHeight="28.0" prefWidth="140.0" text="Founded:" GridPane.rowIndex="5" />
+            <TextField fx:id="nameField" GridPane.columnIndex="1" />
+            <TextField fx:id="shortNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="budgetField" maxWidth="150.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="groundField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <DatePicker fx:id="foundedDatePicker" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBox fx:id="coachComboBox" prefHeight="25.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label prefHeight="17.0" prefWidth="106.0" text="Status:" GridPane.rowIndex="6" />
+            <CheckBox fx:id="statusCheckBox" mnemonicParsing="false" prefHeight="17.0" prefWidth="112.0" text="Active" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <Button layoutX="174.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleOk" prefHeight="25.0" prefWidth="65.0" text="OK" />
+      <Button layoutX="247.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="25.0" prefWidth="65.0" text="Cancel" />
+      <Separator layoutY="240.0" prefHeight="3.0" prefWidth="340.0" />
+   </children>
+</AnchorPane>

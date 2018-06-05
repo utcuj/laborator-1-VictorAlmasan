@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="445.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="league.project.controller.MainLayoutController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showLoginDialog" text="Login" />
+                  <MenuItem mnemonicParsing="false" onAction="#showAbout" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#quitApplication" text="Exit" />
+            </items>
+          </Menu>
+          <Menu fx:id="m1" mnemonicParsing="false" text="League">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#showTeamsOverview" text="Team" />
+                  <MenuItem mnemonicParsing="false" onAction="#showContractsOverview" text="Contract" />
+            </items>
+          </Menu>
+          <Menu fx:id="m2" mnemonicParsing="false" text="Schedule">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#showLeagueManagementDialog" text="Settings" />
+                  <MenuItem fx:id="mi22" mnemonicParsing="false" onAction="#showScheduleCreateOverview" text="Management" />
+            </items>
+          </Menu>
+            <Menu fx:id="m3" mnemonicParsing="false" text="Statistics">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#generateMatchList" text="Match List" />
+                  <Menu mnemonicParsing="false" text="Players">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#generatePlayerContractHistory" text="Contract History" />
+                      <MenuItem mnemonicParsing="false" onAction="#generateScorers" text="Scorers" />
+                        <MenuItem mnemonicParsing="false" onAction="#generateScorersByPosition" text="Scorers By  Position" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Team Standings">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#generateTeamOverall" text="Overall" />
+                      <MenuItem mnemonicParsing="false" onAction="#generateTeamHome" text="Home" />
+                        <MenuItem mnemonicParsing="false" onAction="#generateTeamAway" text="Away" />
+                    </items>
+                  </Menu>
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

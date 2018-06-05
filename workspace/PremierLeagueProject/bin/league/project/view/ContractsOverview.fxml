@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="420.0" maxWidth="900.0" minHeight="420.0" minWidth="900.0" prefHeight="420.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="league.project.controller.ContractsOverviewController">
+   <children>
+      <SplitPane fx:id="verticalSplitPane" dividerPositions="0.5" maxHeight="420.0" maxWidth="900.0" minHeight="420.0" minWidth="900.0" orientation="VERTICAL" prefHeight="420.0" prefWidth="900.0">
+        <items>
+          <AnchorPane maxHeight="50.0" maxWidth="900.0" minHeight="50.0" minWidth="900.0" prefHeight="50.0" prefWidth="900.0">
+               <children>
+                  <GridPane alignment="CENTER" layoutX="71.0" layoutY="15.0" maxHeight="20.0" maxWidth="758.0" minHeight="20.0" minWidth="685.0" prefHeight="20.0" prefWidth="758.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="80.0" minWidth="54.0" prefWidth="79.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="203.0" minWidth="177.0" prefWidth="192.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="122.0" minWidth="90.0" prefWidth="122.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="177.0" minWidth="145.0" prefWidth="145.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="180.0" minWidth="180.0" prefWidth="180.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" maxHeight="20.0" maxWidth="92.0" minHeight="20.0" minWidth="75.0" prefHeight="20.0" prefWidth="92.0" text="Team Name" />
+                        <TextField fx:id="teamNameField" alignment="CENTER" maxHeight="25.0" maxWidth="192.0" minHeight="25.0" minWidth="180.0" prefHeight="25.0" prefWidth="192.0" GridPane.columnIndex="1" />
+                        <Label alignment="CENTER" maxHeight="20.0" maxWidth="109.0" minHeight="20.0" minWidth="75.0" prefHeight="20.0" prefWidth="109.0" text="Player Last Name" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="playerNameField" alignment="CENTER" maxHeight="25.0" maxWidth="180.0" minHeight="25.0" minWidth="146.0" prefHeight="25.0" prefWidth="159.0" GridPane.columnIndex="3" />
+                        <ButtonBar prefHeight="25.0" prefWidth="61.0" GridPane.columnIndex="4">
+                           <GridPane.margin>
+                              <Insets top="2.0" />
+                           </GridPane.margin>
+                           <buttons>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleSearchContract" text="Search">
+                                 <graphic>
+                                    <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <Button alignment="CENTER" layoutX="115.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleReset" text="Reset">
+                                 <graphic>
+                                    <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/reset.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </buttons>
+                        </ButtonBar>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane maxHeight="370.0" maxWidth="900.0" minHeight="370.0" minWidth="900.0" prefHeight="370.0" prefWidth="900.0">
+               <children>
+                  <SplitPane dividerPositions="0.477728285077951" maxHeight="366.0" maxWidth="900.0" minHeight="366.0" minWidth="900.0" prefHeight="366.0" prefWidth="900.0">
+                    <items>
+                      <AnchorPane maxHeight="370.0" maxWidth="480.0" minHeight="370.0" minWidth="480.0" prefHeight="370.0" prefWidth="480.0">
+                           <children>
+                              <TableView fx:id="contractsTable" layoutX="5.0" layoutY="5.0" maxHeight="311.0" maxWidth="470.0" minHeight="311.0" minWidth="470.0" prefHeight="311.0" prefWidth="470.0">
+                                <columns>
+                                  <TableColumn fx:id="playerNameColumn" editable="false" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" resizable="false" sortable="false" text="Player Name" />
+                                  <TableColumn fx:id="teamNameColumn" editable="false" maxWidth="140.0" minWidth="140.0" prefWidth="140.0" resizable="false" sortable="false" text="Team Name" />
+                                    <TableColumn fx:id="endDateColumn" editable="false" maxWidth="140.0" minWidth="140.0" prefWidth="140.0" resizable="false" sortable="false" text="End Date" />
+                                    <TableColumn fx:id="statusColumn" editable="false" maxWidth="25.0" minWidth="25.0" prefWidth="25.0" sortable="false" />
+                                </columns>
+                              </TableView>
+                              <ButtonBar layoutX="382.0" layoutY="321.0" prefHeight="40.0" prefWidth="84.0">
+                                <buttons>
+                                  <Button mnemonicParsing="false" onAction="#handleNewContract" text="Add">
+                                       <graphic>
+                                          <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/add.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                </buttons>
+                              </ButtonBar>
+                              <GridPane layoutX="29.0" layoutY="326.0" prefHeight="30.0" prefWidth="340.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="15.0" minWidth="15.0" prefWidth="15.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="45.0" minWidth="45.0" prefWidth="45.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="15.0" minWidth="15.0" prefWidth="15.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="15.0" minWidth="15.0" prefWidth="15.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Contract Status:" />
+                                    <Label prefHeight="17.0" prefWidth="114.0" text="Active" GridPane.columnIndex="2" />
+                                    <Label prefHeight="17.0" prefWidth="111.0" text="Bankruptcy" GridPane.columnIndex="4" />
+                                    <Label prefHeight="17.0" prefWidth="108.0" text="Cancelled" GridPane.columnIndex="6">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                                       <image>
+                                          <Image url="@../../../images/greenCLegend.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                                       <image>
+                                          <Image url="@../../../images/redCLegend.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+                                       <image>
+                                          <Image url="@../../../images/orangeClegend.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                 </children>
+                              </GridPane>
+                           </children></AnchorPane>
+                        <AnchorPane maxHeight="370.0" maxWidth="420.0" minHeight="370.0" minWidth="420.0" prefHeight="370.0" prefWidth="420.0">
+                           <children>
+                              <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="CENTER" layoutY="4.0" maxHeight="311.0" maxWidth="420.0" minHeight="311.0" minWidth="420.0" prefHeight="311.0" prefWidth="420.0" text="Contract Information" textAlignment="CENTER" textFill="#0c15d0">
+                                <content>
+                                  <AnchorPane maxHeight="285.0" maxWidth="410.0" minHeight="285.0" minWidth="410.0" prefHeight="285.0" prefWidth="410.0">
+                                       <children>
+                                          <GridPane layoutX="14.0" layoutY="14.0" prefHeight="243.0" prefWidth="374.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="81.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="285.0" prefWidth="293.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label text="Id Contract:" />
+                                                <Label text="Player Name:" GridPane.rowIndex="1" />
+                                                <Label text="Team Name:" GridPane.rowIndex="3" />
+                                                <Label text="Player Role:" GridPane.rowIndex="4" />
+                                                <Label text="Start Date:" GridPane.rowIndex="5" />
+                                                <Label text="End Date:" GridPane.rowIndex="6" />
+                                                <Label text="Salary (£):" GridPane.rowIndex="7" />
+                                                <Label fx:id="idContractLabel" prefHeight="33.0" prefWidth="285.0" text="Label" wrapText="true" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font></Label>
+                                                <Label fx:id="playerNameLabel" prefHeight="40.0" prefWidth="285.0" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font></Label>
+                                                <Label fx:id="teamNameLabel" prefHeight="40.0" prefWidth="285.0" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font></Label>
+                                                <Label fx:id="playerRoleLabel" prefHeight="33.0" prefWidth="285.0" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font></Label>
+                                                <Label fx:id="startDateLabel" prefHeight="31.0" prefWidth="285.0" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font></Label>
+                                                <Label fx:id="endDateLabel" prefHeight="26.0" prefWidth="285.0" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font></Label>
+                                                <Label fx:id="salaryLabel" prefHeight="30.0" prefWidth="285.0" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font></Label>
+                                                <Label text="CNP:" GridPane.rowIndex="2" />
+                                                <Label fx:id="playerCnpLabel" prefHeight="29.0" prefWidth="285.0" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font></Label>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                              <ButtonBar layoutX="200.0" layoutY="322.0" prefHeight="40.0" prefWidth="200.0">
+                                <buttons>
+                                  <Button mnemonicParsing="false" onAction="#handleEditContract" text="Renew">
+                                       <graphic>
+                                          <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/edit.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#handleDeleteContract" text="Cancel">
+                                       <graphic>
+                                          <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/delete.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                </buttons>
+                              </ButtonBar>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

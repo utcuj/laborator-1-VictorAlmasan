@@ -1,0 +1,11 @@
+.dialog-pane .label {
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+    /*-fx-font-size: 2em;*/
+}
+
+.dialog-pane:header .header-panel .label {
+    -fx-font-size: 1em;
+    -fx-font-style: italic;
+    -fx-text-fill: black;
+}
